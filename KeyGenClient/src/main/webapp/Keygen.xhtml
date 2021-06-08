@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<!-- http://localhost:8088/Keygen.xhtml -->
+
+<h:head>
+
+
+	<h:outputStylesheet name="primeicons/primeicons.css"
+		library="primefaces" />
+	<style type="text/css">
+</style>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</h:head>
+
+<body style="background-color: white;">
+	<h:form>
+
+
+		<p:panel id="everything" style="border:none;">
+			<p:panelGrid id="img_panel" columns="3" width="100%">
+				<p:panel id="panel_1" widgetvar="panelwv"
+					style="text-align:center;  background:
+        
+        linear-gradient(
+          rgba(0, 0, 0, 0.4), 
+          rgba(0, 0, 0, 0.4)
+        ), url(../img/pic.png); width:250px; height:500px; margin:0 auto; background-size: cover; background-repeat:no-repeat">
+
+				</p:panel>
+
+				<p:panel id="panel_2" widgetvar="panelwv"
+					style="text-align:left;   width:250px; height:500px; margin:0 auto; background-size: cover; background-repeat:no-repeat">
+					<h5>Generation Options</h5>
+					
+					<br> </br>
+					<p:outputLabel for="@next" value="Select product "
+						style="font-size: 13px !important; font-weight:; color: #061c3e" />
+
+					
+
+					<p:selectOneMenu id="option" value="#{keyGenBean.selectedProduct}"  >
+
+					 <f:selectItems value="#{keyGenBean.productList}" var="selectedProduct" itemLabel="#{selectedProduct}" itemValue="#{selectedProduct}"/>
+
+					</p:selectOneMenu>
+
+					
+					<br> </br>
+					<p:outputLabel for="@next" value="Key Comment"
+						style="font-size: 13px !important; font-weight:; color: #061c3e" />
+					<p:inputText placeholder="KeyComment" value="#{keyGenBean.keyComment}" />
+					<br> </br>
+					
+					
+					<p:outputLabel for="@next" value="Number of Keys"
+						style="font-size: 13px !important; font-weight:; color: #061c3e" />
+					<p:inputText placeholder="NumberOfKeys" value=" " />
+
+
+
+
+					<br> </br>
+
+
+					<p:commandButton
+						style="background-color: #061c3e Transparent; font-size: 21px; color:#061c3e; border-radius: 12px;  border: 2px solid #061c3e; padding: 10px 15px"
+						value="GENERATE" actionListener="#{keyGenBean.generate}"
+						update="panel_3">
+					</p:commandButton>
+
+
+
+
+				</p:panel>
+				<p:panel id="panel_3" widgetvar="panelwv"
+					style="text-align:center;   width:350px; height:500px; margin:0 auto; background-size: cover; background-repeat:no-repeat">
+					<p:outputPanel deferred="true">
+						<h5>Generated Key</h5>
+						<h:outputText id="generatedkeys"
+							value="#{keyGenBean.generatedKey}" style="font-size: 15px !important; font-weight:; color: #061c3e"/>
+					</p:outputPanel>
+					<br> </br>
+					
+					
+
+				</p:panel>
+			</p:panelGrid>
+			
+			<p:panel id="check" style="border:none;">
+			<p:outputLabel for="@next" value="Validate key   "
+						style="font-size: 13px !important; font-weight:; color: #061c3e" />
+					<p:inputText placeholder="key" value="#{keyGenBean.userKey}" style="font-size: 14px; padding: 10px 40px" size="39" />
+					<p:commandButton
+						style="background-color: #061c3e Transparent; font-size: 10px; color:#061c3e; border-radius: 12px;  border: 2px solid #061c3e; padding: 8px 10pxm; margin: 1%"
+						value="CHECK" actionListener="#{keyGenBean.check}"
+						update="checktext">
+					</p:commandButton>
+					<h:outputText id="checktext" 
+							value="#{keyGenBean.check}" style="font-size: 15px !important; font-weight:bold; color: #061c3e; margin: 1%" />
+					
+			
+			</p:panel>
+		</p:panel>
+		
+	</h:form>
+</body>
+
+</html>
