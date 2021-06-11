@@ -1,17 +1,18 @@
 # AES-Key-Generator-in-Java 
-API to generate and validate keys.
+Web Client to generate and validate keys.
 
-- Simple RESTful Web Services
+- Web Client
+- Simple RESTful Web Services is [here](https://github.com/AnastasiaVosswinkel/keygenservice) on GitHub   
 	
-- Web Client is [here](https://github.com/AnastasiaVosswinkel/keygenclient) on GitHub 
+
 
 
 ![alt text](KeyGenClientSmall.png)
 
- ![alt text](GeneratedKeysSmall.png)
+![alt text](GeneratedKeysSmall.png)
 
 
-
+# Web Services
 ##### Frameworks and Tools 
 * JSF – Java EE
 * Spring
@@ -229,9 +230,6 @@ It has the @RestController annotation:
 
 
 # Web Client
-
-The Web Client is [here](https://github.com/AnastasiaVosswinkel/keygenclient) on GitHub 
-
 
 ##### Frameworks and Tools 
 * JSF – Java EE
